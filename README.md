@@ -6,8 +6,4 @@ mpiexec -n 2 python get_ndvi.py
   
 Required Libraries:
 
-rasterio
-  
-Numpy
-
-MatPlotLib
+mpi4py, rasterio, Numpy, MatPlotLib
