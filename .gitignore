@@ -12,3 +12,6 @@ venv/
 # Jupyter and editor state
 .ipynb_checkpoints/
 .vscode/
+
+# Written by the notebook from the two band files; run it to recreate
+presentation_code/ndvi.tif

@@ -33,7 +33,7 @@ The timer starts right after the imports and stops after rank 0 has displayed th
 | `get_ndvi.py` | The MPI script described above |
 | `presentation_code/Calculating NDVI for our Area of Interest.ipynb` | Serial walkthrough: reads the two bands, computes NDVI, writes `ndvi.tif`, renders the colour-mapped figure above and a histogram of NDVI values |
 | `presentation_code/Landsat8/` | Red (B4) and NIR (B5) clips of Landsat 8 scene `LC08_L1TP_042035_20180603_20180615_01_T1`: 2107 x 1338 pixels at 30 m, UTM zone 11N |
-| `presentation_code/ndvi.tif`, `presentation_code/ndvi-image.png` | Outputs of the notebook |
+| `presentation_code/ndvi-image.png` | The figure above, as saved by the notebook |
 | `NDVI Presentation (1).pptx` | The eight-slide deck. Its last slide is the timing chart discussed below |
 
 ## Running it
@@ -72,7 +72,7 @@ Use 1, 2, 3 or 6 processes with the sample clip. See the limitations below for w
 
 The script was last checked in October 2026 on macOS (Apple silicon) with Python 3.13, mpi4py 4.1.2, MPICH 5.0.2, rasterio 1.5.2, NumPy 2.5.3 and Matplotlib 3.11.2, using the Agg backend. Runs with 1, 2, 3 and 6 processes produced the same 1338 x 2107 array, and that array equals the one the notebook computes.
 
-To run the notebook, open it with `presentation_code/` as the working directory. It also needs a Jupyter kernel in the environment. It reads the band files from `Landsat8/` and writes `ndvi.tif` and `ndvi-image.png` next to itself. With the versions above it reproduces the tracked `ndvi.tif` byte for byte. The figure is rendered again, so `ndvi-image.png` changes.
+To run the notebook, open it with `presentation_code/` as the working directory. It also needs a Jupyter kernel in the environment. It reads the band files from `Landsat8/` and writes `ndvi.tif` and `ndvi-image.png` next to itself. `ndvi.tif` is about 22 MB and the notebook recreates it from the two band files, so it is not tracked and `.gitignore` lists it. The figure is rendered again on each run, so the tracked `ndvi-image.png` changes.
 
 ## What the timing showed
 
