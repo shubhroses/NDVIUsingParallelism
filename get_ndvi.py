@@ -40,8 +40,8 @@ startTime = time.time()
 
 image_height = 1338
 width = 2107
-red_band_path = './presentation/Landsat8/LC08_L1TP_042035_20180603_20180615_01_T1_B4_clip.tif'
-nir_band_path = './presentation/Landsat8/LC08_L1TP_042035_20180603_20180615_01_T1_B5_clip.tif'
+red_band_path = './presentation_code/Landsat8/LC08_L1TP_042035_20180603_20180615_01_T1_B4_clip.tif'
+nir_band_path = './presentation_code/Landsat8/LC08_L1TP_042035_20180603_20180615_01_T1_B5_clip.tif'
 
 
 def get_bands():
