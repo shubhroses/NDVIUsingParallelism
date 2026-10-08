@@ -1,0 +1,14 @@
+# macOS Finder metadata
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter and editor state
+.ipynb_checkpoints/
+.vscode/
