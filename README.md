@@ -68,9 +68,9 @@ To run without windows, select the non-interactive Agg backend. Each process the
 MPLBACKEND=Agg mpiexec -n 2 python get_ndvi.py
 ```
 
-Use 1, 2, 3 or 6 processes with the sample clip. See the limitations below for why.
+Use 1, 2, 3 or 6 processes with the sample clip. See the limitations below for why. By default Open MPI refuses to start more processes than the machine has cores; add `--oversubscribe` to the `mpiexec` command to allow it. MPICH has no such limit.
 
-The script was last checked in October 2026 on macOS (Apple silicon) with Python 3.13, mpi4py 4.1.2, MPICH 5.0.2, rasterio 1.5.2, NumPy 2.5.3 and Matplotlib 3.11.2, using the Agg backend. Runs with 1, 2, 3 and 6 processes produced the same 1338 x 2107 array, and that array equals the one the notebook computes.
+The script was last checked in October 2026 on macOS (Apple silicon) with Python 3.13, mpi4py 4.1.2, MPICH 5.0.2, rasterio 1.5.2, NumPy 2.5.3 and Matplotlib 3.11.2, using the Agg backend. Runs with 1, 2, 3 and 6 processes produced the same 1338 x 2107 array, and that array equals the one the notebook computes. Open MPI 5.0.11, installed with `pip install openmpi`, gave the same array for the same four counts.
 
 To run the notebook, open it with `presentation_code/` as the working directory. It also needs a Jupyter kernel in the environment. It reads the band files from `Landsat8/` and writes `ndvi.tif` and `ndvi-image.png` next to itself. `ndvi.tif` is about 22 MB and the notebook recreates it from the two band files, so it is not tracked and `.gitignore` lists it. The figure is rendered again on each run, so the tracked `ndvi-image.png` changes.
 
